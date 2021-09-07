@@ -1,20 +1,12 @@
 package cn.wolfcode.plus.mapper;
 
 import cn.wolfcode.plus.domain.Employee;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.StringUtils;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @author Ahan
@@ -23,7 +15,7 @@ import java.util.Map;
  * @description
  **/
 @SpringBootTest
-public class MyBatisPlusAPITest3 {
+public class MyBatisPlusUPdateWrapperTest3 {
     @Autowired
     private EmployeeMapper employeeMapper;
 
