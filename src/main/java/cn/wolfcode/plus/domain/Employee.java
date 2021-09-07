@@ -6,8 +6,6 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
-import org.springframework.stereotype.Service;
 
 /**
  * @author Ahan
@@ -28,6 +26,7 @@ public class Employee {
     private Integer age;
     private Integer admin;
     private Long deptId;
+    @TableField(exist = false)
     private Department dept;
 
     @TableField(exist = false)
