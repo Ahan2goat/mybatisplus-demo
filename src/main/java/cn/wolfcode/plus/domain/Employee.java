@@ -28,6 +28,7 @@ public class Employee {
     private Integer age;
     private Integer admin;
     private Long deptId;
+    private Department dept;
 
     @TableField(exist = false)
     private Integer count;

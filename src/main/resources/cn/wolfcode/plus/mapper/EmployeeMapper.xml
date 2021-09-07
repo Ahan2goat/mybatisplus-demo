@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.wolfcode.plus.mapper.EmployeeMapper">
+    <resultMap id="BaseResultMap" type="cn.wolfcode.plus.domain.Employee">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="ename" jdbcType="VARCHAR" property="name"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="age" jdbcType="INTEGER" property="age"/>
+        <result column="admin" jdbcType="BIT" property="admin"/>
+        <result column="deptId" property="dept.id"/>
+        <result column="d_id" property="dept.id"/>
+        <result column="d_name" property="dept.name"/>
+        <result column="d_sn" property="dept.sn"/>
+    </resultMap>
+    <select id="listByXmlSingle" resultMap="BaseResultMap">
+        SELECT id, ename, password, email, age, admin, dept_id
+        FROM t_employee
+    </select>
+    <select id="listByXmlJoin" resultMap="BaseResultMap">
+        SELECT e.id,
+               e.ename,
+               e.password,
+               e.email,
+               e.age,
+               e.admin,
+               e.dept_id,
+               d.id   as d_id,
+               d.name as d_name,
+               d.sn   as d_sn
+        FROM t_employee e left join department d on e.dept_id = d.id
+    </select>
+
+</mapper>
